@@ -1,0 +1,19 @@
+import open3d as o3d
+
+def view_ply_file(filename):
+    """
+    Load and visualize a .ply file in a separate Open3D window.
+    """
+    # Load the point cloud
+    pcd = o3d.io.read_point_cloud(filename)
+
+    # Launch visualization window
+    o3d.visualization.draw_geometries([pcd],
+                                      window_name="LiDAR Point Cloud Viewer",
+                                      width=1280,
+                                      height=720,
+                                      left=50,
+                                      top=50)
+
+# Example
+view_ply_file(r"C:\Users\yendh\AirSim\PythonClient\multirotor\shared_map\scout_drone1.ply")
